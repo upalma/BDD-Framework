@@ -7,7 +7,6 @@ import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-
 public class loginStepDefination {
 
     WebDriver driver;
@@ -25,6 +24,13 @@ public class loginStepDefination {
         System.out.println(title);
         Assert.assertEquals("#1 Free CRM software in the cloud for sales and service", title);
     }
+
+    //@Then("^user enters username user enters password") //
+    public void user_enters_username_user_enter_password(String username, String password){
+        driver.findElement(By.name("username")).sendKeys("naveenk");
+       driver.findElement(By.name("password")).sendKeys("test@123");
+    }
+
             // 1.    \"(.*)\"    2.  \"([^\"]*)\"  Regular Expression
     @Then("^user enters \"(.*)\" user enters \"(.*)\"$") //user enters username user enters password
     public void user_enters_username_user_enters_password(String username, String password){
@@ -49,23 +55,4 @@ public class loginStepDefination {
     public void close_the_browser(){
         driver.close();
     }
-//    @When("^user mouse over to contact list$")
-//    public void user_mouse_over_to_contact_list(){
-//
-//    }
-//
-//    @Then("^user clicks on new contact list$")
-//    public void user_clicks_on_new_contact_list() {
-//
-//    }
-//
-//    @Then("^user clicks on save button$")
-//    public void user_clicks_on_save_button() {
-//
-//    }
-//
-//    @Then("^verify new contact created$")
-//    public void verify_new_contact_created() {
-//
-//    }
 }

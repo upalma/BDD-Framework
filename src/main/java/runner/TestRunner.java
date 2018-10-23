@@ -18,7 +18,7 @@ import org.junit.runner.RunWith;
         strict =  true,
         //dryRun-true: will not run the blower, check all the step definitions are correct or not or something missing in mapping
         //dryRun-false: execute the test in proper way
-        dryRun = false // false
+        dryRun = false // true
  )
 
 public class TestRunner { }
