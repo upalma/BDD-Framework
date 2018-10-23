@@ -6,6 +6,7 @@ import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 public class loginStepDefination {
 
@@ -46,10 +47,27 @@ public class loginStepDefination {
     }
 
     @Then("^user in on home page$")
-    public void user_in_on_home_page(){
+    public void user_in_on_home_page() {
         String title = driver.getTitle();
         System.out.println(title);
         Assert.assertEquals("CRMPRO", title);
+    }
+
+    @Then("^user moves to new contact page$")
+    public void user_moves_to_new_contact_page(){
+        driver.switchTo().frame("mainpanel");
+        Actions action = new Actions(driver);
+        action.moveToElement(driver.findElement(By.cssSelector("#navmenu>ul>li:nth-child(4)>a"))).build().perform();
+        driver.findElement(By.xpath("//a[contains(text(),'New Contact')]")).click();
+        }
+
+    @Then("^user enters new contact \"([^\"]*)\" and \"([^\"]*)\" and \"([^\"]*)\"$")
+    public void user_enters_new_contact_and_and(String firstName, String lastName, String position) {
+        driver.findElement(By.id("first_name")).sendKeys(firstName);
+        driver.findElement(By.id("last_name")).sendKeys(lastName);
+        driver.findElement(By.id("company_position")).sendKeys(position);
+        driver.findElement(By.xpath("//input[@type='submit' and @value='save']")).click();
+
     }
     @Then("^close the browser$")
     public void close_the_browser(){

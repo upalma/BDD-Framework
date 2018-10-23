@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         //features: path of features file
-        features = "/Users/palmauzzal/SeleniumProject/BDDFramework/src/main/java/features",
+        features = "/Users/palmauzzal/SeleniumProject/BDDFramework/src/main/java/features/Contacts.feature",
         //glue: path of step Definition file/package name
         glue = {"stepDefinition"},
         //format : genetate different type of reporting
