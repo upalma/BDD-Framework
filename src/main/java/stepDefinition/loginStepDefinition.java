@@ -8,7 +8,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
-public class loginStepDefination {
+public class loginStepDefinition {
 
     WebDriver driver;
 
@@ -26,8 +26,8 @@ public class loginStepDefination {
         Assert.assertEquals("#1 Free CRM software in the cloud for sales and service", title);
     }
 
-    //@Then("^user enters username user enters password") //
-    public void user_enters_username_user_enter_password(String username, String password){
+    @Then("^user enters username user enters password") //
+    public void user_enters_username_user_enter_password(){
         driver.findElement(By.name("username")).sendKeys("naveenk");
        driver.findElement(By.name("password")).sendKeys("test@123");
     }
