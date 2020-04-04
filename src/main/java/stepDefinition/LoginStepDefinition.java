@@ -8,7 +8,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
-public class loginStepDefinition {
+public class LoginStepDefinition {
 
     WebDriver driver;
 
@@ -26,14 +26,14 @@ public class loginStepDefinition {
         Assert.assertEquals("#1 Free CRM software in the cloud for sales and service", title);
     }
 
-    @Then("^user enters username user enters password") //
+    @When("^user enters username user enters password") //
     public void user_enters_username_user_enter_password(){
         driver.findElement(By.name("username")).sendKeys("naveenk");
        driver.findElement(By.name("password")).sendKeys("test@123");
     }
 
             // 1.    \"(.*)\"    2.  \"([^\"]*)\"  Regular Expression
-    @Then("^user enters \"(.*)\" user enters \"(.*)\"$") //user enters username user enters password
+    @When("^user enters \"(.*)\" user enters \"(.*)\"$") //user enters username user enters password
     public void user_enters_username_user_enters_password(String username, String password){
         driver.findElement(By.name("username")).sendKeys(username);
         driver.findElement(By.name("password")).sendKeys(password);
@@ -50,7 +50,7 @@ public class loginStepDefinition {
     public void user_in_on_home_page() {
         String title = driver.getTitle();
         System.out.println(title);
-        Assert.assertEquals("CRMPRO", title);
+        Assert.assertEquals("#1 Free CRM software in the cloud for sales and service", title);
     }
 
     @Then("^user moves to new contact page$")

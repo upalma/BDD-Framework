@@ -16,8 +16,8 @@ import org.junit.runner.RunWith;
         monochrome= true,
         // strict: execution will be failed, if there are any undefined / pending steps are there
         strict=  true,
-        //dryRun-true: will not run the blower, check all the step definitions are correct or not or something missing in mapping
+        //dryRun-true: will not lunch the browser, will check all the step definitions are correct or not or something missing in mapping
         //dryRun-false: execute the test in proper way
-        dryRun=true)
+        dryRun=false)
 
 public class TestRunner { }
